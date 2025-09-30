@@ -5,7 +5,7 @@
 
 ## Descripción
 
-Esta aplicación de escritorio desarrollada en **Visual Basic .NET** **De caracter Educativo**. Permite el ingreso y almacenamiento de datos básicos de personal en una base de datos **MySQL**. El formulario está diseñado para ser simple, intuitivo y seguro, validando los campos obligatorios antes de guardar la información.
+Esta aplicación de escritorio desarrollada en **Visual Basic .NET** **De caracter Educativo**. Permite el ingreso y almacenamiento de datos básicos de personal en una base de datos **MySQL** con el panel de phpMyAdmin. El formulario está diseñado para ser simple, intuitivo y seguro, validando los campos obligatorios antes de guardar la información.
 
 ## Características
 
