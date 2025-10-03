@@ -20,7 +20,7 @@ Esta aplicación de escritorio desarrollada en **Visual Basic .NET** **De caract
 ## Captura de pantalla (actualizacion)
 - se Creo el boton buscar, para revizar los datos almacenados buscando por el rut 
 
-![Formulario de Registro](img/interfas2.png)
+![Formulario de Registro](img/interfaz2.png)
 
 ## Requisitos
 
