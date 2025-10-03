@@ -17,9 +17,10 @@ Esta aplicación de escritorio desarrollada en **Visual Basic .NET** **De caract
 - Mensajes de éxito y error para el usuario.
 - Limpieza automática del formulario tras guardar.
 
-## Captura de pantalla
+## Captura de pantalla (actualizacion)
+- se Creo el boton buscar, para revizar los datos almacenados buscando por el rut 
 
-![Formulario de Registro](img/formulario.png)
+![Formulario de Registro](img/interfas2.png)
 
 ## Requisitos
 
