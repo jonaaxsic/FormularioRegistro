@@ -111,6 +111,45 @@ Public Class Form1
         End Using
     End Sub
 
+    Private Sub btnBuscar_Click(sender As Object, e As EventArgs) Handles btnBuscar.Click
+        Dim rut As String = txtRut.Text.Trim()
+        If String.IsNullOrWhiteSpace(rut) Then
+            MessageBox.Show("Por favor, ingrese el RUT a buscar.", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning)
+            txtRut.Focus()
+            Return
+        End If
+
+        Using conn As New MySqlConnection(connectionString)
+            Try
+                conn.Open()
+                Dim sql As String = "SELECT Nombre, Apellido, Sexo, Comuna, Ciudad, Observacion FROM Personas WHERE RUT = @rut"
+                Using cmd As New MySqlCommand(sql, conn)
+                    cmd.Parameters.AddWithValue("@rut", rut)
+                    Using reader As MySqlDataReader = cmd.ExecuteReader()
+                        If reader.Read() Then
+                            txtNombre.Text = reader("Nombre").ToString()
+                            txtApellido.Text = reader("Apellido").ToString()
+                            txtCiudad.Text = reader("Ciudad").ToString()
+                            txtObservacion.Text = reader("Observacion").ToString()
+                            cboComuna.SelectedItem = reader("Comuna").ToString()
+                            Dim sexo As String = reader("Sexo").ToString()
+                            rbtnMasculino.Checked = (sexo = "Masculino")
+                            rbtnFemenino.Checked = (sexo = "Femenino")
+                            rbtnNoEspecifica.Checked = (sexo = "No especifica")
+                        Else
+                            MessageBox.Show("RUT no encontrado.", "Información", MessageBoxButtons.OK, MessageBoxIcon.Information)
+                            LimpiarFormulario()
+                            txtRut.Text = rut
+                            txtRut.Focus()
+                        End If
+                    End Using
+                End Using
+            Catch ex As Exception
+                MessageBox.Show("Error al buscar el RUT: " & ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error)
+            End Try
+        End Using
+    End Sub
+
     ' Método para limpiar el formulario
     Private Sub LimpiarFormulario()
         txtRut.Clear()

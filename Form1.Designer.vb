@@ -41,6 +41,7 @@ Partial Class Form1
         Label7 = New Label()
         txtObservacion = New TextBox()
         btnGuardar = New Button()
+        btnBuscar = New Button()
         GroupBoxSexo.SuspendLayout()
         SuspendLayout()
         ' 
@@ -64,7 +65,7 @@ Partial Class Form1
         ' 
         LabelEjemplo.AutoSize = True
         LabelEjemplo.Font = New Font("Microsoft Sans Serif", 8.25F, FontStyle.Regular, GraphicsUnit.Point, CByte(0))
-        LabelEjemplo.Location = New Point(262, 43)
+        LabelEjemplo.Location = New Point(132, 9)
         LabelEjemplo.Name = "LabelEjemplo"
         LabelEjemplo.Size = New Size(101, 13)
         LabelEjemplo.TabIndex = 2
@@ -214,11 +215,21 @@ Partial Class Form1
         btnGuardar.Text = "Guardar MySql"
         btnGuardar.UseVisualStyleBackColor = True
         ' 
+        ' btnBuscar
+        ' 
+        btnBuscar.Location = New Point(283, 40)
+        btnBuscar.Name = "btnBuscar"
+        btnBuscar.Size = New Size(75, 23)
+        btnBuscar.TabIndex = 16
+        btnBuscar.Text = "Buscar"
+        btnBuscar.UseVisualStyleBackColor = True
+        ' 
         ' Form1
         ' 
-        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleDimensions = New SizeF(7.0F, 15.0F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(387, 410)
+        Controls.Add(btnBuscar)
         Controls.Add(btnGuardar)
         Controls.Add(txtObservacion)
         Controls.Add(Label7)
@@ -263,4 +274,5 @@ Partial Class Form1
     Friend WithEvents Label7 As Label
     Friend WithEvents txtObservacion As TextBox
     Friend WithEvents btnGuardar As Button
+    Friend WithEvents btnBuscar As Button
 End Class
